@@ -37,6 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # Third party libraries
+    'rest_framework',
+    # Self hosted libraries
+    'toy_apis.apps.ToyApisConfig',
+    'drones.apps.DronesConfig',
 ]
 
 MIDDLEWARE = [
@@ -78,6 +83,15 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
+
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql',
+    #     'NAME': 'toys',
+    #     'USER': 'postgres',
+    #     'PASSWORD': 'password',
+    #     'HOST': '127.0.0.1',
+    #     'PORT': '5432',
+    # }
 }
 
 
