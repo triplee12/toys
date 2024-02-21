@@ -19,7 +19,9 @@ from django.urls import path, re_path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("api/v1/", include("toy_apis.urls")),
-    path("api/v2/", include("drones.urls")),
-    re_path(r'^api-auth/', include('rest_framework.urls')),
+    re_path(r"^v1/api/", include("toy_apis.urls")),
+    re_path(r"^v1.5/api/", include("drones.urls")),
+    re_path(r'^v1.5/api/api-auth/', include('rest_framework.urls')),
+    re_path(r"^v2/api/", include("drones.v2.urls", namespace="v2")),
+    re_path(r'^v2/api/api-auth/', include('rest_framework.urls', namespace='rest_framework_v2')),
 ]
